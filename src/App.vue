@@ -1,15 +1,19 @@
 <template>
   <nav class="navbar navbar-light">
-    <div class="container">
-      <a href="" class="navbar-brand">Peter's Parking</a>
-      <router-link to="/">Home</router-link> 
-      <router-link to="/about">About</router-link> 
-      <a href="">Condutores</a> 
-      <a href="">Veiculos</a> 
-      <a href="">Modelos</a> 
-      <a href="">Marcas</a>
+    <div class="container-fluid">
+      <div>
+        <router-link to="/" class="navbar-brand">Peter's Parking</router-link> 
+      </div>
+      <router-link to="/about">Movimentações</router-link> 
+      <router-link to="/">Condutores</router-link> 
+      <router-link to="/">Veiculos</router-link> 
+      <router-link to="/">Modelos</router-link> 
+      <router-link to="/">Marcas</router-link> 
+      <router-link to="/">
+        <img src="./assets/gear-solid.svg" alt="">
+      </router-link>
     </div>
-  </nav>
+    </nav>
   <router-view/>
 </template>
 
@@ -33,8 +37,6 @@ body {
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
 
@@ -48,6 +50,16 @@ nav {
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+
+.container-fluid {
+  --mo-gutter-x: 6rem;
+}
+
+@media (max-width: 1213px) {
+  body {
+    background-repeat: repeat
   }
 }
 </style>

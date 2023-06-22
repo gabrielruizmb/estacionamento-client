@@ -1,14 +1,17 @@
 <template>
-  <nav class="navbar navbar-light">
+  <nav class="navbar">
     <div class="container-fluid">
       <div>
-        <router-link to="/" class="navbar-brand">Peter's Parking</router-link> 
+        <router-link to="/" class="navbar-brand">
+          <img src="./assets/parking-icon.svg" alt="">  
+          Peter's Parking
+        </router-link> 
       </div>
-      <router-link to="/about">Movimentações</router-link> 
-      <router-link to="/">Condutores</router-link> 
-      <router-link to="/">Veiculos</router-link> 
-      <router-link to="/">Modelos</router-link> 
-      <router-link to="/">Marcas</router-link> 
+      <router-link to="/about" class="navbar-menu">Movimentações</router-link> 
+      <router-link to="/" class="navbar-menu">Condutores</router-link> 
+      <router-link to="/" class="navbar-menu">Veiculos</router-link> 
+      <router-link to="/" class="navbar-menu">Modelos</router-link> 
+      <router-link to="/" class="navbar-menu">Marcas</router-link> 
       <router-link to="/">
         <img src="./assets/gear-solid.svg" alt="">
       </router-link>
@@ -27,6 +30,12 @@ $prefix: "mo-";
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+:root {
+  --primary-color: whitesmoke;
+  --secondary-color: #241f31;
+  //--secondary-color: #2c3e50;
+}
+
 body {
   background: linear-gradient(0deg, rgba(250, 0, 0, 0.54), rgba(255, 174, 0, 0.69)), url(./assets/ParkingLotBackGround.jpeg);
   background-size: 70%;
@@ -37,18 +46,31 @@ body {
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
+  color: var(--secondary-color);
 }
 
-nav {
-  background-color: whitesmoke;
+.navbar {
+  background-color: var(--primary-color);
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--secondary-color);
+
+    &:hover {
+    color: var(--secondary-color);
+    }
+    &.router-link-exact-active {
+      color: var(--secondary-color);
+    }
+  }
+
+  .navbar-menu {
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-decoration-line: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      text-decoration-line: underline;
     }
   }
 }

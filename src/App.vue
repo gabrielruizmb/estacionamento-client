@@ -4,14 +4,15 @@
       <div>
         <router-link to="/" class="navbar-brand">
           <img src="./assets/parking-icon.svg" alt="">  
-          Peter's Parking
+          Peter's 
+          Parking
         </router-link> 
       </div>
       <router-link to="/about" class="navbar-menu">Movimentações</router-link> 
       <router-link to="/" class="navbar-menu">Condutores</router-link> 
       <router-link to="/" class="navbar-menu">Veiculos</router-link> 
       <router-link to="/" class="navbar-menu">Modelos</router-link> 
-      <router-link to="/" class="navbar-menu">Marcas</router-link> 
+      <router-link to="/marcas" class="navbar-menu">Marcas</router-link> 
       <router-link to="/">
         <img src="./assets/gear-solid.svg" alt="">
       </router-link>
@@ -34,6 +35,7 @@ $prefix: "mo-";
   --primary-color: whitesmoke;
   --secondary-color: #241f31;
   //--secondary-color: #2c3e50;
+  --sucess-color: #198754;
 }
 
 body {
@@ -69,6 +71,9 @@ body {
     color: var(--secondary-color);
     text-decoration-line: none;
 
+    &:hover {
+      text-decoration-line: underline;
+    }
     &.router-link-exact-active {
       text-decoration-line: underline;
     }
@@ -77,6 +82,32 @@ body {
 
 .container-fluid {
   --mo-gutter-x: 6rem;
+}
+
+.view-table {
+  width: 100%;
+  border-radius: 30px;
+  background-color: rgba(245, 245, 245, 0.5);
+}
+
+.view-table thead {
+  border-bottom: 1px solid gray;
+}
+
+.view-table tbody th{
+  border-top: 1px solid gray;
+}
+
+.view-table th {
+  padding: 10px 30px 10px 30px;
+}
+
+.text-color-sucess {
+  color: var(--sucess-color);
+}
+
+.text-color-danger {
+  color: #dc3545;;
 }
 
 @media (max-width: 1213px) {

@@ -110,6 +110,14 @@ body {
   color: #dc3545;;
 }
 
+.options-box a:first-child{
+  margin-right: 7.5px ;
+}
+
+.options-box a:last-child{
+  margin-left: 7.5px ;
+}
+
 @media (max-width: 1213px) {
   body {
     background-repeat: repeat

@@ -18,7 +18,17 @@
             <span v-if="!item.ativo" class="text-color-danger">Inativo</span>
           </th>
           <th>{{item.nome}}</th>
-          <th>XX</th>
+          <th>
+            <div class="options-box">
+              <router-link to="/marcas">
+                <img src="../../assets/pencil-icon.svg" alt="Ícone de lápis" title="Editar">
+              </router-link> 
+              |
+              <router-link to="/marcas">
+                <img src="../../assets/trash-icon.svg" alt="Ícone de lixeira" title="Excluir">
+              </router-link> 
+            </div>
+          </th>
         </tr>
       </tbody>
     </table>

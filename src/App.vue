@@ -8,11 +8,11 @@
           Parking
         </router-link> 
       </div>
-      <router-link to="/about" class="navbar-menu">Movimentações</router-link> 
+      <router-link to="/" class="navbar-menu">Movimentações</router-link> 
       <router-link to="/" class="navbar-menu">Condutores</router-link> 
       <router-link to="/" class="navbar-menu">Veiculos</router-link> 
       <router-link to="/" class="navbar-menu">Modelos</router-link> 
-      <router-link to="/marcas" class="navbar-menu">Marcas</router-link> 
+      <router-link to="/marcas/lista" class="navbar-menu">Marcas</router-link> 
       <router-link to="/">
         <img src="./assets/gear-solid.svg" alt="">
       </router-link>
@@ -106,6 +106,10 @@ body {
   color: var(--sucess-color);
 }
 
+.sucess-color {
+  background-color: var(--sucess-color);
+}
+
 .text-color-danger {
   color: #dc3545;;
 }
@@ -116,6 +120,46 @@ body {
 
 .options-box a:last-child{
   margin-left: 7.5px ;
+}
+
+.view-table-info {
+  margin-top: 30px;
+  padding: 0px 30px 0px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.classic-button {
+  padding: 10px;
+  border-radius: 30px;
+  text-decoration-line: none;
+  color: var(--secondary-color);
+
+  &:hover {
+    background-color: #36a06e;
+    color: var(--primary-color);
+  }
+}
+
+.view-form {
+  padding: 30px;
+  font-weight: bold;
+}
+
+.view-form label {
+  margin-left: 5px;
+}
+
+.view-form input {
+  border-radius: 30px;
+  width: 100%;
+}
+
+.form-view-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 @media (max-width: 1213px) {

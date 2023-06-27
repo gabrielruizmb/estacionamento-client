@@ -1,6 +1,15 @@
 <template>
   <div class="container">
-    <h1>Lista de marcas</h1>
+    <div class="view-table-info">
+      <div>
+        <h1>Lista de marcas</h1>
+      </div>
+      <div class="cadastrar-button-box">
+        <router-link to="/marcas/formulario" class="classic-button sucess-color">
+          Cadastrar
+        </router-link>
+      </div>
+    </div>
     <table class="view-table">
       <thead>
         <tr>

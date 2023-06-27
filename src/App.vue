@@ -36,6 +36,8 @@ $prefix: "mo-";
   --secondary-color: #241f31;
   //--secondary-color: #2c3e50;
   --sucess-color: #198754;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
 }
 
 body {
@@ -53,6 +55,7 @@ body {
 
 .navbar {
   background-color: var(--primary-color);
+  margin-bottom: 30px;
 
   a {
     font-weight: bold;
@@ -106,8 +109,26 @@ body {
   color: var(--sucess-color);
 }
 
-.sucess-color {
+.sucess-button {
   background-color: var(--sucess-color);
+  &:hover {
+    background-color: #36a06e;
+    color: var(--primary-color);
+  }
+}
+
+.info-button {
+  background-color: var(--warning-color);
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+.danger-button {
+  background-color: var(--danger-color);
+  &:hover {
+    color: var(--primary-color);
+  }
 }
 
 .text-color-danger {
@@ -123,7 +144,6 @@ body {
 }
 
 .view-table-info {
-  margin-top: 30px;
   padding: 0px 30px 0px 30px;
   display: flex;
   justify-content: space-between;
@@ -135,10 +155,8 @@ body {
   border-radius: 30px;
   text-decoration-line: none;
   color: var(--secondary-color);
-
   &:hover {
-    background-color: #36a06e;
-    color: var(--primary-color);
+    cursor: pointer;
   }
 }
 
@@ -160,6 +178,13 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+
+  & a:first-child {
+    margin-right: 7.5px;
+  }
+  & a:last-child {
+    margin-left: 7.5px;
+  }
 }
 
 @media (max-width: 1213px) {

@@ -5,7 +5,7 @@
         <h1>Lista de marcas</h1>
       </div>
       <div class="cadastrar-button-box">
-        <router-link to="/marcas/formulario" class="classic-button sucess-color">
+        <router-link to="/marcas/formulario" class="classic-button sucess-button">
           Cadastrar
         </router-link>
       </div>
@@ -29,11 +29,13 @@
           <th>{{item.nome}}</th>
           <th>
             <div class="options-box">
-              <router-link to="/marcas">
+              <router-link :to="{name: 'marcas-formulario-editar-view', 
+              query: {id: item.id, form: 'editar'}}">
                 <img src="../../assets/pencil-icon.svg" alt="Ícone de lápis" title="Editar">
               </router-link> 
               |
-              <router-link to="/marcas">
+              <router-link :to="{name: 'marcas-formulario-excluir-view', 
+              query: {id: item.id, form: 'excluir'}}">
                 <img src="../../assets/trash-icon.svg" alt="Ícone de lixeira" title="Excluir">
               </router-link> 
             </div>

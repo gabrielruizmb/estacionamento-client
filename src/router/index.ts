@@ -15,7 +15,19 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/marcas/formulario',
     name: 'marcas-formulario',
-    component: () => import('../views/marcas/MarcasFormView.vue')
+    component: () => import('../views/marcas/MarcasFormView.vue'),
+    children: [
+      {
+        path: '/marcas/formulario',
+        name: 'marcas-formulario-editar-view',
+        component: () => import('../views/marcas/MarcasFormView.vue')
+      },
+      {
+        path: '/marcas/formulario',
+        name: 'marcas-formulario-excluir-view',
+        component: () => import('../views/marcas/MarcasFormView.vue')
+      }
+    ]
   }
 ]
 

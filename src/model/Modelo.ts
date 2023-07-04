@@ -1,7 +1,7 @@
 import { AbstractEntity } from "./AbstractEntity";
-import { Marca } from "./Marca";
+import { MarcaModel } from "./MarcaModel";
 
 export class Modelo extends AbstractEntity {
   nome!: string;
-  marca!: Marca;
+  marca!: MarcaModel;
 }

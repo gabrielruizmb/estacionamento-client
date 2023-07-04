@@ -64,9 +64,10 @@ export default defineComponent({
         .then (sucess => {
 
           this.marca = new MarcaModel();
+          console.log(sucess)
         })
         .catch (error => {
-          console.log(error);
+          console.log(error.nome);
         })
     },
     findById(id: number) {

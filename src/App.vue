@@ -185,11 +185,13 @@ body {
 
 .status-switch {
   display: flex;
+  width: 130px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .switch-status {
-  width: 45px;
+  width: 40px;
   height: 20px;
   background-color: var(--primary-color);
   border: solid 1px var(--secondary-color);
@@ -197,6 +199,7 @@ body {
   border-radius: 15px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .switch-status-interruptor {

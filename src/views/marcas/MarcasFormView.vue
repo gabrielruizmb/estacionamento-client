@@ -7,6 +7,20 @@
       <label for="">Nome da marca:</label>
       <br>
       <input type="text" v-model="marca.nome">
+      <div v-if="form === 'editar'" class="change-status-field">
+        <label for="">Ativar/Desativar:</label>
+        <div class="status-switch">
+          <span v-if="marca.ativo == true" class="text-color-sucess list-style-type">
+            Ativo
+          </span>
+          <span v-if="marca.ativo == false" class="text-color-danger list-style-type">
+            Inativo
+          </span>
+          <div class="switch-status" :class="mensagem.interruptorCss" @click="onClickSwitchStatus()">
+            <div class="switch-status-interruptor"></div>
+          </div>
+        </div>
+      </div>
       <div class="form-view-buttons">
         <router-link to="/marcas/lista" class="classic-button info-button">
           Voltar
@@ -42,7 +56,10 @@ export default defineComponent({
   name: 'MarcaFormulario',
   data() {
     return {
-      marca: new MarcaModel()
+      marca: new MarcaModel(),
+      mensagem: {
+        interruptorCss: "" as string
+      }
     }
   },
   computed: {
@@ -59,6 +76,15 @@ export default defineComponent({
     }
   },
   methods: {
+    onClickSwitchStatus() {
+      this.marca.ativo == true ? 
+        this.marca.ativo = false : 
+        this.marca.ativo = true
+
+      this.marca.ativo == false ? 
+        this.mensagem.interruptorCss = "interruptor-switch-on" : 
+        this.mensagem.interruptorCss = ""
+    },
     onClickCadastrar() {
       MarcaClient.cadastrar(this.marca)
         .then (sucess => {

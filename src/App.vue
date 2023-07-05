@@ -150,6 +150,11 @@ body {
   align-items: center;
 }
 
+.list-style-type {
+  display: list-item;
+  list-style-position: inside;
+}
+
 .classic-button {
   padding: 10px;
   border-radius: 30px;
@@ -172,6 +177,38 @@ body {
 .view-form input {
   border-radius: 30px;
   width: 100%;
+}
+
+.change-status-field {
+  margin-top: 15px;
+}
+
+.status-switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch-status {
+  width: 45px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border: solid 1px var(--secondary-color);
+  margin-left: 15px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.switch-status-interruptor {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  margin: 0px 2px 0px 2px;
+}
+
+.interruptor-switch-on {
+  justify-content: flex-end;
 }
 
 .form-view-buttons {

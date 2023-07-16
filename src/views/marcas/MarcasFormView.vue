@@ -7,6 +7,23 @@
       <label for="">Nome da marca:</label>
       <br>
       <input type="text" v-model="marca.nome">
+      <div v-if="form === 'editar'" class="change-status-field">
+        <label for="">Ativar/Desativar:</label>
+        <div class="status-switch">
+          <span v-if="marca.ativo == true" class="text-color-sucess list-style-type">
+            Ativo
+          </span>
+          <span v-if="marca.ativo == false" class="text-color-danger list-style-type">
+            Inativo
+          </span>
+          <div v-if="marca.ativo == true" class="switch-status interruptor-switch-on" @click="onClickSwitchInterruptor()">
+            <div class="switch-status-interruptor"></div>
+          </div>
+          <div v-if="marca.ativo == false" class="switch-status interruptor-switch-off" @click="onClickSwitchInterruptor()">
+            <div class="switch-status-interruptor"></div>
+          </div>
+        </div>
+      </div>
       <div class="form-view-buttons">
         <router-link to="/marcas/lista" class="classic-button info-button">
           Voltar
@@ -59,14 +76,20 @@ export default defineComponent({
     }
   },
   methods: {
+    onClickSwitchInterruptor() {
+      this.marca.ativo == true ?
+        this.marca.ativo = false :
+        this.marca.ativo = true
+    },
     onClickCadastrar() {
       MarcaClient.cadastrar(this.marca)
         .then (sucess => {
 
           this.marca = new MarcaModel();
+          console.log(sucess)
         })
         .catch (error => {
-          console.log(error);
+          console.log(error.nome);
         })
     },
     findById(id: number) {

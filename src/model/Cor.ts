@@ -7,4 +7,5 @@ export enum Cor {
   PRETO,
   PRATA,
   ROXO
+  //ROXO = "ROXO"
 }

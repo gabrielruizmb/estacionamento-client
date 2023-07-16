@@ -16,7 +16,10 @@
           <span v-if="marca.ativo == false" class="text-color-danger list-style-type">
             Inativo
           </span>
-          <div class="switch-status" :class="mensagem.interruptorCss" @click="onClickSwitchStatus()">
+          <div v-if="marca.ativo == true" class="switch-status interruptor-switch-on" @click="onClickSwitchInterruptor()">
+            <div class="switch-status-interruptor"></div>
+          </div>
+          <div v-if="marca.ativo == false" class="switch-status interruptor-switch-off" @click="onClickSwitchInterruptor()">
             <div class="switch-status-interruptor"></div>
           </div>
         </div>
@@ -56,10 +59,7 @@ export default defineComponent({
   name: 'MarcaFormulario',
   data() {
     return {
-      marca: new MarcaModel(),
-      mensagem: {
-        interruptorCss: "" as string
-      }
+      marca: new MarcaModel()
     }
   },
   computed: {
@@ -76,14 +76,10 @@ export default defineComponent({
     }
   },
   methods: {
-    onClickSwitchStatus() {
-      this.marca.ativo == true ? 
-        this.marca.ativo = false : 
+    onClickSwitchInterruptor() {
+      this.marca.ativo == true ?
+        this.marca.ativo = false :
         this.marca.ativo = true
-
-      this.marca.ativo == false ? 
-        this.mensagem.interruptorCss = "interruptor-switch-on" : 
-        this.mensagem.interruptorCss = ""
     },
     onClickCadastrar() {
       MarcaClient.cadastrar(this.marca)

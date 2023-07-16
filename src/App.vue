@@ -211,6 +211,10 @@ body {
 }
 
 .interruptor-switch-on {
+  justify-content: flex-start;
+}
+
+.interruptor-switch-off {
   justify-content: flex-end;
 }
 
